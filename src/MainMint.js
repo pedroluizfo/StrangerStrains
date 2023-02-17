@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {ethers, BigNumber} from 'ethers';
 import StrangerStrains from './StrangerStrains.json';
+import {Box,Button,Flex,Input,Text} from '@chakra-ui/react';
+
 
 const StrangerStrainsNFTAddress = "0x5DA547a9F49aF80c435ADb7c7eaa0AbbF480A2b6";
 
@@ -45,29 +47,76 @@ const MainMint = ({accounts, setAccounts}) => {
     }
 
     return(
-        <div>
-            <h1>StrangerStrains</h1>
-            <p> description here !!! </p>
-            {isConnected ? (
-
+        <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+            <Box width="520px">
                 <div>
-                    <div>
-                      <button onClick={handleDecrement}>-</button> 
-                      <input type ="number" value={mintAmount} />
-                      <button onClick={handleIncrement}>+</button> 
-                    </div>
-                    <button onClick={handleMint}>Mint Now</button>
-
-
+                    <Text fontSize="48px" textShadow="0 5px #00FF00">StrangerStrains</Text>
+                    <Text fontSize="30px" letterSpacing="-5.5%" fontFamily="inherit" textShadow="0 2px 2px #00FF00"> Buy weed don't get arrested </Text>
                 </div>
+                {isConnected ? (
 
-            ): (
+                    <div>
+                        <Flex justify="center" align="center">
+                        <Button
+                        backgroundColor="#00FF00"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="black"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"
+                        onClick = {handleDecrement}>-</Button> 
 
-                <p>You must be connected to Mint</p>
+                        <Input
+                        readOnly
+                        fontFamily="inherit"
+                        width="100px"
+                        height="40px"
+                        textAlign="center"
+                        paddingLeft="19px"
+                        marginTop="10px"
+                         type ="number" value={mintAmount} />
 
-            )}
+                        <Button
+                        backgroundColor="#00FF00"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="black"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"
+                        onClick = {handleIncrement}>+</Button>
+                        </Flex>
+                           <Button
+                        backgroundColor="#00FF00"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="black"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"
+                        onClick = {handleMint}>Mint now</Button>
 
-        </div>
+
+                    </div>
+
+                ): (
+
+                    <Text
+                    marginTop="70px"
+                    fontSize="30px"
+                    letterSpacing="-5.5%"
+                    fontFamily="inherit"
+                    textShadow="0 3px #00FF00"
+                    color="black"
+                    >You must be connected to Mint</Text>
+
+                )}
+            </Box>
+        </Flex>
 
     );
 
