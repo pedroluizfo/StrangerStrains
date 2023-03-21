@@ -1,5 +1,6 @@
 {
   "name": "full-mint-website",
+  "homepage": "https://mint.strangerstrains.xyz/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

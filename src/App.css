@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-}
 
 .overlay {
 opacity: 0.85;
@@ -18,18 +15,18 @@ height: 100%;
 z-index: 10;
 top:0;
 left:0;
-position: fixed;
+position: absolute;
 }
 
 .Moving-Backgroung-Image {
   z-index: -1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(./assets/background/unicorn.gif);
   background-size: cover;
+  background-color: black;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 40% 40%;
