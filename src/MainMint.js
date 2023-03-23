@@ -61,11 +61,11 @@ return(
 
 <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
 <BigComponent></BigComponent>
-<Box width="400px" mr='67px'><img src={Pote0} ></img>
+<Box width="400px" mr='0px'><img src={Pote0} marginTop={'-40px'} ></img>
        
                     <Text
                    marginTop="10px"
-                   fontSize="30px"
+                   fontSize="20px"
                    letterSpacing="-5.5%"
                    fontFamily="inherit"
                    color="#83DD3C"
@@ -79,7 +79,7 @@ return(
                 <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
 
 <BigComponent></BigComponent>
-                            <Box className="mint-container" width="400px" mr='67px'>
+                            <Box className="mint-container" width="400px" mr='0px'marginTop={'-40px'}>
                                 <div>
                                     <img src={images[mintAmount-1]}/>
             
@@ -92,7 +92,7 @@ return(
                                     cursor="pointer"
                                     fontFamily="inherit"
                                     padding="15px"
-                                    marginTop="10px"
+                                    marginTop="0px"
                                     onClick = {handleDecrement}>-</Button> 
             
                                     <Input
@@ -102,7 +102,7 @@ return(
                                     height="40px"
                                     textAlign="center"
                                     paddingLeft="19px"
-                                    marginTop="10px"
+                                    marginTop="0px"
                                      type ="number" value={mintAmount} />
             
                                     <Button
@@ -113,7 +113,7 @@ return(
                                     cursor="pointer"
                                     fontFamily="inherit"
                                     padding="15px"
-                                    marginTop="10px"
+                                    marginTop="0px"
                                     onClick = {handleIncrement}>+</Button>
                                     </Flex>
                                        <Button
@@ -124,7 +124,7 @@ return(
                                     cursor="pointer"
                                     fontFamily="inherit"
                                     padding="15px"
-                                    marginTop="10px"
+                                    marginTop="0px"
                                     onClick = {handleMint}>Mint now</Button>
             
             
