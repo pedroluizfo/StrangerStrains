@@ -4,13 +4,11 @@ import { ethers, BigNumber } from 'ethers';
 import StrangerStrains from './StrangerStrains.json';
 import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
 import Pote0 from './assets/icons/POTE 0.svg';
-import sideIcons from './assets/icons/sideIcons.svg';
-import rightIcons from './assets/icons/ELEMENTOS DIREITA.svg';
 import Pote1 from './assets/icons/POTE 1.svg';
 import Pote2 from './assets/icons/POTE 2.svg';
 import Pote3 from './assets/icons/POTE 3.svg';
 import BigComponent from './BigComponent';
-
+import './responsive.css'
 const StrangerStrainsNFTAddress = '0x5DA547a9F49aF80c435ADb7c7eaa0AbbF480A2b6';
 
 const MainMint = ({ accounts, setAccounts }) => {
@@ -18,7 +16,6 @@ const MainMint = ({ accounts, setAccounts }) => {
   const [mintAmount, setMintAmount] = useState(1);
   const [count, setCount] = useState(1);
   const isConnected = Boolean(accounts[0]);
-  console.log(isConnected)
 
   const images = [Pote1, Pote2, Pote3];
 
@@ -61,6 +58,7 @@ const MainMint = ({ accounts, setAccounts }) => {
    
 if(!isConnected){
 return(
+
 <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
 <BigComponent></BigComponent>
 <Box width="400px" mr='67px'><img src={Pote0} ></img>
@@ -70,8 +68,7 @@ return(
                    fontSize="30px"
                    letterSpacing="-5.5%"
                    fontFamily="inherit"
-                   textShadow="0 3px #00FF00"
-                   color="black"
+                   color="#83DD3C"
                    >You must be connected to Mint</Text>
    </Box>
    </Flex>
@@ -82,13 +79,13 @@ return(
                 <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
 
 <BigComponent></BigComponent>
-                            <Box width="400px" mr='67px'>
+                            <Box className="mint-container" width="400px" mr='67px'>
                                 <div>
                                     <img src={images[mintAmount-1]}/>
             
                                     <Flex justify="center" align="center">
                                     <Button
-                                    backgroundColor="#00FF00"
+                                    backgroundColor="#83DD3C"
                                     borderRadius="5px"
                                     boxShadow="0px 2px 2px 1px #0F0F0F"
                                     color="black"
@@ -109,7 +106,7 @@ return(
                                      type ="number" value={mintAmount} />
             
                                     <Button
-                                    backgroundColor="#00FF00"
+                                    backgroundColor="#83DD3C"
                                     borderRadius="5px"
                                     boxShadow="0px 2px 2px 1px #0F0F0F"
                                     color="black"
@@ -120,7 +117,7 @@ return(
                                     onClick = {handleIncrement}>+</Button>
                                     </Flex>
                                        <Button
-                                    backgroundColor="#00FF00"
+                                    backgroundColor="#83DD3C"
                                     borderRadius="5px"
                                     boxShadow="0px 2px 2px 1px #0F0F0F"
                                     color="black"

@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px) {
+
+
+    .mint-container {
+      width: 100%;
+      max-width: 400px;
+    }
+   
+  }
+
+
+  @media (min-width: 768px) {
+    .logo {
+        display: none;
+    }
+}

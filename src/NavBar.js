@@ -1,6 +1,7 @@
 import React from 'react'
 import {Box,Button,Flex,Image,Link,Spacer} from '@chakra-ui/react';
 import Logo from './assets/icons/LogoStrains.svg';
+import './responsive.css'
 
 
 const NavBar =({accounts, setAccounts}) =>{
@@ -34,8 +35,9 @@ const NavBar =({accounts, setAccounts}) =>{
 
 
           {/* Middle - Logo */}
-        <Flex justify="center" width="20%">
+        <Flex className='logo' justify="center" width="20%">
             <img src={Logo} alt="Logo" color="#83DD3C" />
+            
         </Flex>
 
 
@@ -58,7 +60,6 @@ const NavBar =({accounts, setAccounts}) =>{
             <Button
             backgroundColor="#83DD3C"
             borderRadius="5px"
-            boxShadow="0px 2px 2px 1px #83DD3C"
             color="green"
             cursor="pointer"
             fontFamily="inherit"

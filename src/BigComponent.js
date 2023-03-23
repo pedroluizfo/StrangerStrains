@@ -5,6 +5,8 @@ import sideIcons from './assets/icons/sideIcons.svg';
 import rightIcons from './assets/icons/ELEMENTOS DIREITA.svg';
 
 
+
+
 const BigComponent = () => {
 
 
@@ -36,6 +38,9 @@ const BigComponent = () => {
               <Text position='absolute' bottom='240px' right='300px' color="#83DD3C" >WE DO NOT RECOMMEND <br></br>CONSUMPTION <br></br>WITHOUT THE ADVICE <br></br>OF A SPECIALIST.</Text>
               <Text position='absolute' bottom='120px' right='200px' color="#83DD3C" >LABEL CONTAINING <br></br>STRANGER STRAINS <br></br>INFORMATION.</Text>
             </Box>
+
+
+
 </Flex>
   );      
 };
