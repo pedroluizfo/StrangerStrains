@@ -2,24 +2,34 @@ import { useState } from 'react';
 import React from 'react';
 import { ethers, BigNumber } from 'ethers';
 import StrangerStrains from './StrangerStrains.json';
-import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
-import Pote0 from './assets/icons/POTE 0.svg';
-import Pote1 from './assets/icons/POTE 1.svg';
-import Pote2 from './assets/icons/POTE 2.svg';
-import Pote3 from './assets/icons/POTE 3.svg';
+import { Box, Button, Flex, Input, Text, useMediaQuery } from '@chakra-ui/react';
+import Pote0 from './assets/icons/pote 0.svg';
+import Pote1 from './assets/icons/pote 1.svg';
+import Pote2 from './assets/icons/pote 2.svg';
+import Pote3 from './assets/icons/pote 3.svg';
+import pote0 from './assets/icons/POTE0.svg';
+import pote1 from './assets/icons/POTE1.svg';
+import pote2 from './assets/icons/POTE2.svg';
+import pote3 from './assets/icons/POTE3.svg';
+
 import BigComponent from './BigComponent';
 import './responsive.css'
-const StrangerStrainsNFTAddress = '0x5DA547a9F49aF80c435ADb7c7eaa0AbbF480A2b6';
+const StrangerStrainsNFTAddress = '0x804fAeEC0ce2712c4C954a8C4d7b6fd21B7C749F';
 
 const MainMint = ({ accounts, setAccounts }) => {
-  const [imageSrc, setImageSrc] = useState(Pote0);
+  const [imageSrc, setImageSrc] = useState(pote0);
   const [mintAmount, setMintAmount] = useState(1);
   const [count, setCount] = useState(1);
   const isConnected = Boolean(accounts[0]);
+  const [isLargerThan1360] = useMediaQuery("(min-width: 1361px)");
+  const centerTextValues = ["let's", "fucking", "grow"];
+
+
 
   const images = [Pote1, Pote2, Pote3];
-
   
+
+
   const handleDecrement = () => {
     if (mintAmount <= 1) return;
     setMintAmount(mintAmount - 1);
@@ -33,10 +43,6 @@ const MainMint = ({ accounts, setAccounts }) => {
     setCount(count + 1);
 
   };
-
-
- 
-
 
   async function handleMint() {
     if (window.ethereum) {
@@ -55,13 +61,13 @@ const MainMint = ({ accounts, setAccounts }) => {
     setCount(1);
   }
 
-   
+  
 if(!isConnected){
 return(
 
-<Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+<Flex justify="center" align="center" height="85vh" paddingBottom="240px">
 <BigComponent></BigComponent>
-<Box width="400px" mr='0px'><img src={Pote0} marginTop={'-40px'} ></img>
+<Box position="absolute" width="80%" height="auto"><img src={Pote0}></img>
        
                     <Text
                    marginTop="10px"
@@ -76,10 +82,10 @@ return(
 }else{
     return (
 
-                <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+                <Flex justify="center" align="center" height="85vh" paddingBottom="240px">
 
-<BigComponent></BigComponent>
-                            <Box className="mint-container" width="400px" mr='0px'marginTop={'-40px'}>
+                            <BigComponent></BigComponent>
+                            <Box className="mint-container" width="80%" height="auto">
                                 <div>
                                     <img src={images[mintAmount-1]}/>
             
@@ -95,15 +101,17 @@ return(
                                     marginTop="0px"
                                     onClick = {handleDecrement}>-</Button> 
             
-                                    <Input
-                                    readOnly
-                                    fontFamily="inherit"
-                                    width="100px"
-                                    height="40px"
-                                    textAlign="center"
-                                    paddingLeft="19px"
-                                    marginTop="0px"
-                                     type ="number" value={mintAmount} />
+                                   <Input
+                                  readOnly
+                                  fontFamily="inherit"
+                                  width="100px"
+                                  height="40px"
+                                  textAlign="center"
+                                  paddingLeft="0px"
+                                  marginTop="0px"
+                                  type="string"
+                                  value={centerTextValues[mintAmount-1]}
+                                  />
             
                                     <Button
                                     backgroundColor="#83DD3C"
@@ -140,6 +148,3 @@ return(
 };
 
 export default MainMint;
-
-
-
